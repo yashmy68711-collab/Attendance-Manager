@@ -16,9 +16,8 @@ def save_attendance():
     with open("attendance.txt", "a") as file:
         file.write(f"{name} - {status}\n")
 
-    messagebox.showinfo(
-        "Saved",
-        "Attendance saved successfully!"
+   status_label.config(
+        text="Attendance saved successfully!"
     )
 
     name_entry.delete(0, tk.END)
