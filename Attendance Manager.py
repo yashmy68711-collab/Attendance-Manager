@@ -16,16 +16,19 @@ def save_attendance():
     with open("attendance.txt", "a") as file:
         file.write(f"{name} - {status}\n")
 
-   status_label.config(
+     # Status update
+    status_label.config(
         text="Attendance saved successfully!"
     )
 
+# Clear Function
+def clear_name():
     name_entry.delete(0, tk.END)
 
 # Window
 window = tk.Tk()
 window.title("Attendance Manager")
-window.geometry("400x300")
+window.geometry("400x350")
 
 # Title
 title = tk.Label(
