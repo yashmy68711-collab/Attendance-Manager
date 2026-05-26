@@ -6,6 +6,7 @@ def save_attendance():
     name = name_entry.get().strip()
     status = attendance_var.get()
 
+    # Validation
     if name == "":
         messagebox.showerror(
             "Error",
@@ -13,10 +14,19 @@ def save_attendance():
         )
         return
 
+    # Save to file
     with open("attendance.txt", "a") as file:
         file.write(f"{name} - {status}\n")
 
-     # Status update
+    messagebox.showinfo(
+        "Saved",
+        "Attendance saved successfully!"
+    )
+
+    # Clear input
+    name_entry.delete(0, tk.END)
+
+    # Status update
     status_label.config(
         text="Attendance saved successfully!"
     )
@@ -71,7 +81,26 @@ save_btn = tk.Button(
     width=20
 )
 
-save_btn.pack(pady=15)
+save_btn.pack(pady=10)
+
+# Clear Button
+clear_btn = tk.Button(
+    window,
+    text="Clear",
+    command=clear_name,
+    width=20
+)
+
+clear_btn.pack(pady=5)
+
+# Status Label
+status_label = tk.Label(
+    window,
+    text="Attendance Manager Ready",
+    font=("Arial", 10)
+)
+
+status_label.pack(pady=10)
 
 # Run
 window.mainloop()
