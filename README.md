@@ -43,15 +43,4 @@ attendance-manager/
 
 ---
 
-## 🔮 Future Improvements
 
-* Add attendance history
-* Search attendance records
-* Save attendance by date
-* Better UI design
-
----
-
-## 👨‍💻 Author
-
-Made with Python for learning and practice.
